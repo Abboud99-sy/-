@@ -1,0 +1,6 @@
+{
+  "name": "حروف وكلمات",
+  "description": "تطبيق تعليمي تفاعلي للأطفال لتعلم الحروف العربية وتركيب المقاطع الصوتية وتكوين الكلمات بأسلوب ممتع ومسابقات",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
