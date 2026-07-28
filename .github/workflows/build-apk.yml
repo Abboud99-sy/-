@@ -18,12 +18,15 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Build with Gradle
+      - name: Build APK
         run: |
-          chmod +x gradlew 2>/dev/null || true
           if [ -f "gradlew" ]; then
-            ./gradlew assembleDebug --no-daemon
+            chmod +x gradlew
+            ./gradlew assembleDebug
           else
+            echo "gradlew not found, trying to build with Gradle directly..."
+            sudo apt-get update
+            sudo apt-get install -y gradle
             gradle wrapper
-            ./gradlew assembleDebug --no-daemon
+            ./gradlew assembleDebug
           fi
